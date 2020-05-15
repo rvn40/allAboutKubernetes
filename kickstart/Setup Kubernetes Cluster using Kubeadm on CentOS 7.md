@@ -125,6 +125,11 @@ net.bridge.bridge-nf-call-iptables = 1
 EOF
 sysctl --system
 ```
+##### Set ip_forward
+```
+echo 1 > /proc/sys/net/ipv4/ip_forward
+```
+
 ### Kubernetes Setup
 ##### Add yum repository
 ```
