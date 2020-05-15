@@ -5,10 +5,10 @@ The scenario is 1 vm would be setting up as the master and the other one is the 
 
 ## Spesifications
 In my case this are the spesification of my servers
-|Role|FQDN|IP|OS|RAM|CPU|
-|----|----|----|----|----|----|
-|Master|master01.example.com|10.138.0.12|CentOS 7|2G|2|
-|Worker|worker01.example.com|10.138.0.13|CentOS 7|1G|1|
+|Role|FQDN|IP|External IP|OS|RAM|CPU|
+|----|----|----|----|----|----|----|
+|Master|master01.example.com|10.138.0.12|35.212.238.77|CentOS 7|2G|2|
+|Worker|worker01.example.com|10.138.0.13|35.212.219.20|CentOS 7|1G|1|
 
 ### Pre-requisites
 ##### Install, enable and start docker service
@@ -153,16 +153,16 @@ systemctl start kubelet
 ## On Master
 ##### Initialize Kubernetes Cluster
 ```
-kubeadm init --apiserver-advertise-address=172.42.42.100 --pod-network-cidr=192.168.0.0/16
+kubeadm init --apiserver-advertise-address=10.138.0.12 --pod-network-cidr=192.168.0.0/16
 ```
 ##### Copy kube config
 To be able to use kubectl command to connect and interact with the cluster, the user needs kube config file.
 
-In my case, the user account is venkatn
+In my case, the user account is rvn40
 ```
-mkdir /home/venkatn/.kube
-cp /etc/kubernetes/admin.conf /home/venkatn/.kube/config
-chown -R venkatn:venkatn /home/venkatn/.kube
+mkdir /home/rvn40/.kube
+cp /etc/kubernetes/admin.conf /home/rvn40/.kube/config
+chown -R rvn40:rvn40 /home/rvn40/.kube
 ```
 ##### Deploy Calico network
 This has to be done as the user in the above step (in my case it is __venkatn__)
