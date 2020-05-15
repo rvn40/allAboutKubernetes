@@ -152,6 +152,7 @@ systemctl start kubelet
 ```
 ## On Master
 ##### Initialize Kubernetes Cluster
+Use your own IP segment for api server and you can use your own IP schema for the pod network cidr.
 ```
 kubeadm init --apiserver-advertise-address=10.138.0.12 --pod-network-cidr=192.168.0.0/16
 ```
