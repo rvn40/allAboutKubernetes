@@ -166,9 +166,9 @@ To be able to use kubectl command to connect and interact with the cluster, the 
 
 In my case, the user account is rvn40
 ```
-mkdir /home/rvn40/.kube
-cp /etc/kubernetes/admin.conf /home/rvn40/.kube/config
-chown -R rvn40:rvn40 /home/rvn40/.kube
+mkdir -p $HOME/.kube
+cp /etc/kubernetes/admin.conf $HOME/.kube/config
+chown -R rvn40:rvn40 $HOME/.kube
 ```
 ##### Deploy Calico network
 This has to be done as the user in the above step (in my case it is __venkatn__)
