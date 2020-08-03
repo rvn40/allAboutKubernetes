@@ -8,12 +8,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: monitoring-influxdb
+      k8s-app: monitoring-influxdb
       appKind: monitoring
   template:
     metadata:
       labels:
-        name: monitoring-influxdb
+        k8s-app: monitoring-influxdb
         appKind: monitoring
     spec:
       containers:
@@ -45,4 +45,4 @@ spec:
   - port: 8086
     targetPort: 8086
   selector:
-    name: monitoring-influxdb
+    k8s-app: monitoring-influxdb

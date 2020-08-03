@@ -28,12 +28,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: heapster
+      k8s-app: heapster
       appKind: monitoring
   template:
     metadata:
       labels:
-        name: heapster
+        k8s-app: heapster
         appKind: monitoring
     spec:
       serviceAccountName: heapster
@@ -62,4 +62,4 @@ spec:
   - port: 80
     targetPort: 8082
   selector:
-    name: heapster
+    k8s-app: heapster
