@@ -9,11 +9,12 @@ spec:
   selector:
     matchLabels:
       name: monitoring-influxdb
+      appKind: monitoring
   template:
     metadata:
       labels:
-        task: monitoring
         name: influxdb
+        appKind: monitoring
     spec:
       containers:
       - name: influxdb
