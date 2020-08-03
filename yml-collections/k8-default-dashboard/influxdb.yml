@@ -7,7 +7,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-    name: monitoring-influxdb
+    matchLabels:
+      name: monitoring-influxdb
   template:
     metadata:
       labels:
