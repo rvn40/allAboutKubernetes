@@ -193,3 +193,7 @@ kubectl get nodes
 ```
 kubectl get cs
 ```
+##### Add worker label to node
+```
+kubectl label node <node-name> node-role.kubernetes.io/worker=
+```
