@@ -8,11 +8,10 @@ spec:
   replicas: 1
   selector:
     name: monitoring-influxdb
-    toolsKind: monitoring
   template:
     metadata:
       labels:
-        toolsKind: monitoring
+        task: monitoring
         name: influxdb
     spec:
       containers:
