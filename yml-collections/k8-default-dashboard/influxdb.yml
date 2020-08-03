@@ -33,7 +33,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    task: monitoring
+    appKind: monitoring
     # For use as a Cluster add-on (https://github.com/kubernetes/kubernetes/tree/master/cluster/addons)
     # If you are NOT using this as an addon, you should comment out this line.
     kubernetes.io/cluster-service: 'true'
@@ -45,4 +45,4 @@ spec:
   - port: 8086
     targetPort: 8086
   selector:
-    k8s-app: influxdb
+    name: monitoring-influxdb
