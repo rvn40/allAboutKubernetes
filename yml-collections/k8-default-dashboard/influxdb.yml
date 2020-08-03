@@ -13,11 +13,11 @@ spec:
   template:
     metadata:
       labels:
-        name: influxdb
+        name: monitoring-influxdb
         appKind: monitoring
     spec:
       containers:
-      - name: influxdb
+      - name: monitoring-influxdb
         image: k8s.gcr.io/heapster-influxdb-amd64:v1.5.2
         env:
         - name: INFLUXDB_BIND_ADDRESS
