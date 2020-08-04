@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: monitoring-influxdb
-  namespace: kube-system
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -39,7 +39,7 @@ metadata:
     kubernetes.io/cluster-service: 'true'
     kubernetes.io/name: monitoring-influxdb
   name: monitoring-influxdb
-  namespace: kube-system
+  namespace: default
 spec:
   ports:
   - port: 8086
